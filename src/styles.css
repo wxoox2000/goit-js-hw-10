@@ -1,0 +1,129 @@
+body {
+  font-family: 'Dosis', sans-serif;
+  background-image: linear-gradient(
+    45deg,
+    rgb(0, 0, 102, 0.4) 0%,
+    rgb(224, 75, 0, 0.4) 15%,
+    rgb(246, 35, 186, 0.4) 41%,
+    rgb(246, 35, 186, 0.4) 72%,
+    rgb(224, 75, 0, 0.4) 90%,
+    rgb(0, 0, 102, 0.4) 100%
+  );
+  background-repeat: no-repeat;
+}
+h2,
+p,
+a {
+  margin: 0;
+}
+/* .breed-select {
+  width: 400px;
+  margin-left: calc((100% / 2) - 200px);
+} */
+
+.cat {
+  margin-bottom: 30px;
+}
+
+.cat-info {
+  backdrop-filter: hue-rotate(30deg);
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 15px;
+  width: 1200px;
+}
+.gallery-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery__item {
+  flex-basis: calc((100% - 40px) / 2);
+}
+
+.gallery__item img {
+  height: auto;
+  box-shadow: 5px 5px 12px 8px rgba(128, 128, 128, 0.8);
+}
+
+.cat-breed {
+  margin: 0 0 20px 0;
+  text-align: center;
+  font-size: 40px;
+}
+
+.cat-descr {
+  font-size: 18px;
+}
+
+.cat-temper,
+.cat-origin {
+  font-size: 25px;
+}
+
+.cat-wiki {
+  text-decoration: none;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 11px 27px;
+  color: black;
+}
+
+.cat-wiki-box {
+  display: block;
+  height: 40px;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    315deg,
+    rgb(0, 0, 102, 0.6) 0%,
+    rgb(224, 75, 0, 0.6) 15%,
+    rgb(246, 35, 186, 0.6) 41%,
+    rgb(246, 35, 186, 0.6) 72%,
+    rgb(224, 75, 0, 0.6) 90%,
+    rgb(0, 0, 102, 0.6) 100%
+  ); 
+  border: 2px solid rgba(255, 193, 127, 0.3);
+  transition: background-image 300ms ease, box-shadow 300ms linear;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 0 rgba(128, 128, 128, 0.612);
+}
+.cat-wiki-box:hover,
+.cat-wiki:focus {
+  box-shadow: inset 0 0 12px 5px rgba(128, 128, 128, 1);
+}
+
+.info-wrap {
+    filter: grayscale(30%);
+}
+
+.rating-box {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.rating {
+  flex-basis: 270px;
+    padding: 10px 5px;
+    border-radius: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-left: 2px solid rgba(0, 0, 0, 0.4);
+    border-right: 2px solid rgba(0, 0, 0, 0.4);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+}
+
+.rating-attr {
+    display: inline-block;
+    width: 120px;
+}
