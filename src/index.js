@@ -8,7 +8,9 @@ const select = document.querySelector(".breed-select");
 const card = document.querySelector('.cat-info');
 const div = document.querySelector(".cat-info");
 
+Loading.hourglass('Loading...', {backgroundColor: 'rgba(0,0,0,0.4)',});
 div.hidden = true;
+select.hidden = true;
 fetchBreeds()
 .then(data => {
     console.log(data);
@@ -16,18 +18,21 @@ fetchBreeds()
     `<option value="${id}">${name}</option>`
     ).join('');
     select.insertAdjacentHTML('beforeend', options);
+    select.hidden = false;
     new SlimSelect({
         select: select
       });
-    // const div = document.querySelector('.ss-main');
 })
 .catch(err => {
     Notify.failure(`Oops! Something went wrong! Try reloading the page! (${err.message})`);
+    card.innerHTML = '';
 })
 .finally(Loading.remove(1000));
 
 const handlerSelect = function(evt){
+    Loading.hourglass('Loading...', {backgroundColor: 'rgba(0,0,0,0.4)',});
     div.hidden = false;
+    card.innerHTML = '';
     fetchCatByBreed(evt.target.value)
     .then(data => {
         console.log(data);
@@ -126,6 +131,7 @@ const handlerSelect = function(evt){
             card.insertAdjacentHTML('beforeend', cardInfo);
         })
     .catch(err => {
+        card.innerHTML = '';
         Notify.failure(`Oops! Something went wrong! Try reloading the page! (${err.message})`);
     })
     .finally(Loading.remove(700));
